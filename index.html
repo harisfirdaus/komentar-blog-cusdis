@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Komentar</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="cusdis_thread"
+       data-host="https://cusdis.com"
+       data-app-id="1f0f4961-7dff-4e85-828c-012202515f73">
+  </div>
+
+  <script>
+    const pageUrl = window.location !== window.parent.location
+      ? document.referrer || document.location.href
+      : window.location.href;
+
+    const pageId = pageUrl;
+    const pageTitle = document.title;
+
+    const thread = document.getElementById('cusdis_thread');
+    thread.setAttribute('data-page-id', pageId);
+    thread.setAttribute('data-page-url', pageUrl);
+    thread.setAttribute('data-page-title', pageTitle);
+  </script>
+
+  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+</body>
+</html>
